@@ -1,0 +1,18 @@
+
+*, body {
+  margin: 0px;
+  padding: 0px;
+  
+}
+
+
+.img-pro-xs {
+  border: 3pt solid #c7a66f;
+  border-radius: 20px;
+}
+
+.img-pro-md {
+  border: 5pt solid #c7a66f;
+  border-radius: 20px;
+}
+
