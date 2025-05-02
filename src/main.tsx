@@ -15,7 +15,8 @@ const theme = createTheme({
     lg: '74em',
     xl: '90em',
   },
-  fontFamily: "Inter, sans-serif" 
+  // fontFamily: "Inter, sans-serif" 
+  fontFamily: "IBM Plex Sans Thai, sans-serif" 
 });
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
