@@ -26,11 +26,11 @@ function App() {
   }, [iframeRef])
 
   const login = () => {
-    window.open('https://member.my98.co', '_blank')
+    window.open('https://member.my98.co', '_parent')
   }
 
   const register = () => {
-    window.open('https://member.my98.co/register', '_blank')
+    window.open('https://member.my98.co/register', '_parent')
   }
 
   return (
