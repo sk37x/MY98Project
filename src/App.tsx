@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { AspectRatio, Box, Container, Flex, Stack, Title, Text, Image, useMantineTheme, Divider, Button } from '@mantine/core'
+import { AspectRatio, Box, Container, Flex, Stack, Title, Text, Image, Divider, Button } from '@mantine/core'
 import { Carousel } from '@mantine/carousel'
 import { FaCaretRight, FaFacebook, FaXTwitter, FaLine } from "react-icons/fa6";
 // import './App.css'
@@ -10,8 +10,8 @@ function App() {
   const autoplay = useRef(Autoplay({ delay: 4000 }));
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const isMobile = useMediaQuery('(max-width: 36em)');
-  const theme = useMantineTheme();
-  const tablet = useMediaQuery(`(max-width: ${theme.breakpoints.md})`);
+  // const theme = useMantineTheme();
+  // const tablet = useMediaQuery(`(max-width: ${theme.breakpoints.md})`);
 
 
   useEffect(() => {
@@ -24,6 +24,15 @@ function App() {
       
     // }
   }, [iframeRef])
+
+  const login = () => {
+    window.open('https://member.my98.co', '_blank')
+  }
+
+  const register = () => {
+    window.open('https://member.my98.co/register', '_blank')
+  }
+
   return (
       <Stack gap='0'>
         <Box pos={'fixed'} bottom={'2rem'} right={'-2.5rem'} style={{zIndex:999}} display='none'>
@@ -50,14 +59,14 @@ function App() {
                       </Box>
                       <Divider orientation="vertical" size='md' c='red' />
                       <Box w='100%'>
-                        <Image src='/images/logo_line.png' alt='logo' w={isMobile ? '32px' : '54px'} onClick={() => window.open("https://lin.ee/yzMKX7j", "_blank")} />
+                        <Image src='/images/logo_line.png' alt='logo' style={{cursor:'pointer'}} w={isMobile ? '32px' : '54px'} onClick={() => window.open("https://lin.ee/yzMKX7j", "_blank")} />
                       </Box>
                     </Flex>
                   </Box>
                   <Box w='100%'>
                     <Flex direction='column' gap='sm'>
-                      <Button variant="filled" color="#FF7F00">ลงชื่อเข้าใช้</Button>
-                      <Button variant="filled" color="#2C2C2C">สมัครสมาชิก</Button>
+                      <Button variant="filled" color="#FF7F00" onClick={() => login()}>ลงชื่อเข้าใช้</Button>
+                      <Button variant="filled" color="#2C2C2C" onClick={() => register()}>สมัครสมาชิก</Button>
                     </Flex>
                   </Box>
                 </Flex>
@@ -114,19 +123,19 @@ function App() {
                       <Image src='/images/promotion_1.png' alt='promotion_1'  style={{zIndex: '29', position:'relative'}} />
                     </Box>
                     <Box>
-                      <Button variant="filled" color="#FF7F00">สมัครสมาชิก</Button>
+                      <Button variant="filled" color="#FF7F00" type='button' onClick={() => register()}>สมัครสมาชิก</Button>
                     </Box>
                     <Box w='100%'>
                       <Image src='/images/promotion_2.png' alt='promotion_2'  style={{zIndex: '29', position:'relative'}} />
                     </Box>
                     <Box>
-                      <Button variant="filled" color="#FF7F00">สมัครสมาชิก</Button>
+                      <Button variant="filled" color="#FF7F00" type='button' onClick={() => register()}>สมัครสมาชิก</Button>
                     </Box>
                     <Box w='100%'>
                       <Image src='/images/promotion_3.png' alt='promotion_3'  style={{zIndex: '29', position:'relative'}} />
                     </Box>
                     <Box>
-                      <Button variant="filled" color="#FF7F00">สมัครสมาชิก</Button>
+                      <Button variant="filled" color="#FF7F00" type='button' onClick={() => register()}>สมัครสมาชิก</Button>
                     </Box>
                   </Flex>
                 </Container>
@@ -164,7 +173,8 @@ function App() {
                 <Button color='#FF0000' 
                   style={{borderRadius:'25px'}} 
                   w='160px' 
-                  onClick={() => window.open('', '_blank')}
+                  type='button' 
+                  onClick={() => register()}
                 >สมัครสมาชิกคลิ๊กเลย!</Button>
               </Box>
             </Flex>
@@ -296,7 +306,8 @@ function App() {
                 <Button color='#FF0000' 
                     style={{borderRadius:'25px'}} 
                     w='160px' 
-                    onClick={() => window.open('', '_blank')}
+                    type='button' 
+                    onClick={() => register()}
                   >สมัครสมาชิกคลิ๊กเลย!</Button>
               </Flex>
             </Container>
@@ -333,7 +344,7 @@ function App() {
                   <Flex direction='row' align='center' justify='center' gap='lg'>
                     <FaFacebook color='#1376EE' style={{backgroundColor:'white', borderRadius:'50%'}} fontSize='50px' />
                     <FaXTwitter color='black' style={{padding: '8px', backgroundColor:'white', borderRadius:'50%'}} fontSize='50px' />
-                    <FaLine color='#00c854' style={{backgroundColor:'white', borderRadius:'50%'}} fontSize='50px' onClick={() => window.open("https://lin.ee/yzMKX7j", "_blank")} />
+                    <FaLine color='#00c854' style={{backgroundColor:'white', borderRadius:'50%', cursor: 'pointer'}} fontSize='50px' onClick={() => window.open("https://lin.ee/yzMKX7j", "_blank")} />
                   </Flex>
                 </Box>
 
